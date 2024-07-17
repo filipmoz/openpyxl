@@ -52,3 +52,13 @@ def test_save_load_roundtrip():
         assert ws2["B2"].value == 100
     finally:
         path.unlink(missing_ok=True)
+
+
+def test_sheet_by_name():
+    wb = Workbook()
+    ws1 = wb.active
+    ws1.title = "Data"
+    ws2 = wb.create_sheet("Summary")
+    ws2["A1"] = 99
+    assert wb["Summary"]["A1"].value == 99
+    assert wb["Data"] is ws1

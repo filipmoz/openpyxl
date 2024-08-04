@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 from openpyxl import Workbook, load_workbook
 
-# Same real input as create_sample.py (minimal data)
+# Same real input as create_sample.py
 SAMPLE_ROWS = [
     ["Product", "Qty", "Price"],
     ["Coffee", 2, 3.50],
